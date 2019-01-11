@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Books : </h2>
+  <p *ngIf="!((books)?.length)">No books found</p>
+  <div class="row card-group">
+    <div class="col-sm-4 mb-3"
+         *ngFor="let book of books"
+    >
+      <app-book-card
+        [book]="book"
+        [isFav]="false"
+        (showDetails)="onShowDetails(book)"
+        (toggleFavorite)="onToggleFavorite(book)"></app-book-card>
+    </div>
+  </div>
+</div>

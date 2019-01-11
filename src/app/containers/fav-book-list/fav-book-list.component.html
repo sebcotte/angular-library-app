@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Favorite books : </h2>
+  <p *ngIf="!((favBooks)?.length)">You don't have no favorite book</p>
+  <div class="row card-group">
+    <div class="col-sm-4 mb-3"
+         *ngFor="let favBook of favBooks"
+    >
+      <app-book-card
+        [book]="favBook.bookInfo"
+        [isFav]="true"
+        (showDetails)="onShowDetails(favBook.bookInfo)"
+        (toggleFavorite)="onToggleFavorite(favBook.favBookId)"></app-book-card>
+    </div>
+  </div>
+</div>
