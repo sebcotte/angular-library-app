@@ -7,6 +7,7 @@ import { catchError, map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { Book } from '../models/book';
 import { FavBook } from '../models/fav-book';
+import { AlertService } from './alert.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,10 @@ export class FavBookService {
 
   userLogged: boolean;
 
-  constructor(private db: AngularFirestore, private authService: AuthService, private router: Router) {
+  constructor(private db: AngularFirestore,
+              private authService: AuthService,
+              private router: Router,
+              private alertService: AlertService) {
     this.favBooksCollection = this.db.collection<FavBook>('favBooks');
     this.setFavBooks();
     this.setUserAuthState();
@@ -48,9 +52,11 @@ export class FavBookService {
         userId: this.authService.getCurrentUserId()
       } as FavBook;
 
-      this.favBooksCollection.add(favBook);
+      this.favBooksCollection.add(favBook).then(
+        (success) => this.alertService.success('Book added to your favorite list!')
+      );
     } else {
-      alert('You must log in to add book to favorite list.');
+      this.alertService.warn('You must log in to add book to favorite list.');
     }
   }
 

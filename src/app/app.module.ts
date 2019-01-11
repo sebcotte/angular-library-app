@@ -18,6 +18,8 @@ import { BookService } from './services/book.service';
 import { FavBookService } from './services/fav-book.service';
 import { environment } from 'src/environments/environment';
 import { BookDetailsViewComponent } from './presentationals/book-details-view/book-details-view.component';
+import { AlertComponent } from './containers/alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { BookDetailsViewComponent } from './presentationals/book-details-view/bo
     BookDetailsViewComponent,
     FavBookListComponent,
     BookCardComponent,
-    NavbarComponent
+    NavbarComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { BookDetailsViewComponent } from './presentationals/book-details-view/bo
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule
   ],
-  providers: [AuthService, AuthGuardService, BookService, FavBookService],
+  providers: [AlertService, AuthService, AuthGuardService, BookService, FavBookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
