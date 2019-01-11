@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   getCurrentUserId(): string {
-    return this.userDetails.uid;
+    return (this.userDetails) ? this.userDetails.uid : '';
   }
 
   logOut() {

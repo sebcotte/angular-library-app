@@ -41,19 +41,28 @@ export class FavBookService {
   addBookToFav(book: Book) {
     this.setFavBooks();
     this.setUserAuthState();
-    const favBook = {
-      bookInfo: book,
-      userId: this.authService.getCurrentUserId()
-    } as FavBook;
 
-    this.favBooksCollection.add(favBook);
+    if (this.userLogged) {
+      const favBook = {
+        bookInfo: book,
+        userId: this.authService.getCurrentUserId()
+      } as FavBook;
+
+      this.favBooksCollection.add(favBook);
+    } else {
+      alert('You must log in to add book to favorite list.');
+    }
   }
 
   deleteFavBook(favBookId: string) {
     this.setFavBooks();
     this.setUserAuthState();
 
-    this.favBooksCollection.doc(favBookId).delete();
+    if (this.userLogged) {
+      this.favBooksCollection.doc(favBookId).delete();
+    } else {
+      this.authService.logInWithGoogle();
+    }
   }
 
   private setFavBooks(): void {
