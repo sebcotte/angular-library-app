@@ -1,0 +1,19 @@
+<form novalidate [formGroup]="searchForm" >
+    <h2>Search a book: </h2>
+
+    <div class="form-group">
+      <input class="form-control"
+             placeholder="Title"
+             formControlName="bookTitle">
+
+      <input class="form-control"
+            placeholder="Author"
+            formControlName="author">
+
+      <input class="form-control"
+              placeholder="Author"
+              formControlName="literaryGenre">
+
+      <button class="btn btn-normal" (click)="search(searchForm.value)">Search</button>
+    </div>
+  </form>
