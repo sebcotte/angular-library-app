@@ -3,7 +3,7 @@
   <div class="card-body">
   <h4 class="card-title">{{ book.title }}</h4>
   <h5 class="card-subtitle mb-2 text-muted">{{ book.author }}</h5>
-  <button class="btn btn-primary mx-auto my-auto" (click)="showBookDetails(book)">More</button>
-  <button *ngIf="!isFav" class="btn btn-primary mx-auto my-auto" (click)="toggleFav(book)">Add to fav</button>
-  <button *ngIf="isFav" class="btn btn-primary mx-auto my-auto" (click)="toggleFav(book)">Delete from fav</button>
+  <button class="btn btn-primary mb-2 ml-2" (click)="showBookDetails(book)">More</button>
+  <button *ngIf="!isFav" class="btn btn-primary mb-2 ml-2" (click)="toggleFav(book)">Add to fav</button>
+  <button *ngIf="isFav" class="btn btn-primary mb-2 ml-2" (click)="toggleFav(book)">Delete from fav</button>
 </div>

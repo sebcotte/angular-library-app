@@ -33,6 +33,7 @@ export class SearchComponent implements OnInit {
 
   clear() {
     this.searchForm.reset();
+    this.search(this.searchForm.value);
   }
 
 }
