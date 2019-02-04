@@ -1,8 +1,7 @@
 <div class="container">
-  <h2>Books : </h2>
-  <p *ngIf="!((books)?.length)">No books found</p>
-
   <app-search (groupFilters)="onSearch($event)"></app-search>
+
+  <hr>
 
   <div class="row card-group">
     <div class="col-sm-4 mb-3"
@@ -13,6 +12,10 @@
         [isFav]="false"
         (showDetails)="onShowDetails($event)"
         (toggleFavorite)="onToggleFavorite($event)"></app-book-card>
+    </div>
+
+    <div class="col-auto">
+      <p *ngIf="!((books)?.length)">No books found</p>
     </div>
   </div>
 </div>

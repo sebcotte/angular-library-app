@@ -1,19 +1,29 @@
-<form novalidate [formGroup]="searchForm" >
-    <h2>Search a book: </h2>
-
-    <div class="form-group">
-      <input class="form-control"
-             placeholder="Title"
-             formControlName="bookTitle">
-
-      <input class="form-control"
-            placeholder="Author"
-            formControlName="author">
-
-      <input class="form-control"
-              placeholder="Author"
-              formControlName="literaryGenre">
-
-      <button class="btn btn-normal" (click)="search(searchForm.value)">Search</button>
+<div class="row justify-content-md-center mt-3 mb-3">
+  <form novalidate [formGroup]="searchForm">
+    <div class="col-md-12">
+      <div class="row form-group">
+        <div class="col-md-4">
+          <input class="form-control"
+                  placeholder="Title"
+                  formControlName="bookTitle">
+        </div>
+        <div class="col-md-4">
+          <input class=" form-control"
+                  placeholder="Author"
+                  formControlName="author">
+        </div>
+        <div class="col-md-4">
+          <input class="form-control"
+                  placeholder="Genre"
+                  formControlName="literaryGenre">
+        </div>
+      </div>
+      <div class="row justify-content-md-end">
+        <div class="col-md-auto">
+          <button class="btn btn-outline-primary" (click)="clear()">Clear</button>
+          <button class="btn btn-outline-success ml-2" (click)="search(searchForm.value)">Search</button>
+        </div>
+      </div>
     </div>
   </form>
+</div>

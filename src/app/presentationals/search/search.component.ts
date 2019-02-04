@@ -31,4 +31,8 @@ export class SearchComponent implements OnInit {
     this.groupFilters.emit(filters);
   }
 
+  clear() {
+    this.searchForm.reset();
+  }
+
 }
