@@ -36,6 +36,8 @@ export class BookService {
       map(actions => actions.map(action => {
         const data = action.payload.doc.data() as Book;
         const id = action.payload.doc.id;
+        data.imgPreview = '../../assets/img/books/book-preview.jpg';
+
         return { id, ...data };
       }))
     );
