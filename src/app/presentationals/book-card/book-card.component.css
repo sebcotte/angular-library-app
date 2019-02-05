@@ -3,11 +3,6 @@
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-/*.card-img-overlay {
-  bottom: 215px;
-  left: 66px;
-}*/
-
 .card-img-overlay {
   z-index: 0;
 }
@@ -17,14 +12,7 @@
   z-index: 1;
 }
 
-.card-img-top:hover {
-  filter: brightness(70%);
-  -webkit-filter: brightness(70%);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.badge {
+  padding: 6px 10px;
+  margin-top: 2%;
 }
-
-
