@@ -3,10 +3,16 @@
 
   <hr>
 
+  <div class="row">
+    <div class="col-md-auto">
+      <h2>Books</h2>
+      <p> {{books?.length}} books found</p>
+    </div>
+  </div>
+
   <div class="row card-group">
-    <div class="col-sm-4 mb-3"
-         *ngFor="let book of books"
-    >
+    <div class="col-md-4 mb-3"
+         *ngFor="let book of books">
       <app-book-card
         [book]="book"
         [isFav]="false"

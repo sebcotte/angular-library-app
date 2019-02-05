@@ -50,10 +50,10 @@ export class AlertService {
   alert(type: AlertType, message: string, keepAfterRouteChange = false) {
       this.keepAfterRouteChange = keepAfterRouteChange;
       this.subject.next(<Alert>{ type: type, message: message });
-      // after 4 seconds, close alerts
+      // after 6 seconds, close alerts
       setTimeout(() => {
         this.clear();
-      }, 4000);
+      }, 6000);
   }
 
   clear() {

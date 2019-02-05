@@ -46,16 +46,6 @@ export class BookListComponent implements OnInit {
   }
 
   onToggleFavorite(event: Book) {
-    /*const param = this.route.snapshot.params.id;
-    // check if we are in FavBookComponent or in classic BookListComponent
-    if (param === 'favBooks') {
-      // delete book from favorites
-      this.favBookService.deleteFavBook(event.id);
-    } else {
-      // user is in the classic BookListComponent, so he wants to add book to fav
-      this.favBookService.addBookToFav(event);
-    }*/
-
     // user wants to add book to favorite
     this.favBookService.addBookToFav(event);
   }

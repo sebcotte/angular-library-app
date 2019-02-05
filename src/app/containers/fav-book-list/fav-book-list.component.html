@@ -1,8 +1,13 @@
 <div class="container">
-  <h2>Favorite books : </h2>
-  <p *ngIf="!((favBooks)?.length)">You don't have no favorite book</p>
+  <div class="row mt-3">
+    <div class="col-md-auto">
+      <h2>Favorite Books</h2>
+      <p> {{favBooks?.length}} books found</p>
+    </div>
+  </div>
+
   <div class="row card-group">
-    <div class="col-sm-4 mb-3"
+    <div class="col-md-4 mb-3"
          *ngFor="let favBook of favBooks"
     >
       <app-book-card
