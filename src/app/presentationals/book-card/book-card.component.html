@@ -1,4 +1,4 @@
-<div class="card text-center" >
+<div class="card text-center">
   <img class="card-img-top" src={{book.imgPreview}} alt="">
   <div class="card-img-overlay">
     <button *ngIf="!isFav" class="btn btn-light d-inline-flex align-content-center float-right" (click)="toggleFav(book)">
@@ -6,6 +6,12 @@
     </button>
     <button *ngIf="isFav" class="btn btn-danger d-inline-flex align-content-center float-right" (click)="toggleFav(book)">
       <i class="material-icons mr-1">delete</i>Remove
+    </button>
+    <button class="btn d-inline-flex align-content-center float-right" style="color: red;  ">
+      <i class="material-icons mr-1">favorite</i>
+    </button>
+    <button class="btn d-inline-flex align-content-center float-right" style="color: red;  ">
+      <i class="material-icons mr-1">favorite_border</i>
     </button>
   </div>
   <div class="card-body" (click)="showBookDetails(book)">
