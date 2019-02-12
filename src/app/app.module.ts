@@ -22,6 +22,7 @@ import { AlertComponent } from './containers/alert/alert.component';
 import { AlertService } from './services/alert.service';
 import { SearchService } from './services/search.service';
 import { SearchComponent } from './presentationals/search/search.component';
+import { SimpleSearchComponent } from './presentationals/simple-search/simple-search.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SearchComponent } from './presentationals/search/search.component';
     NavbarComponent,
     AlertComponent,
     SearchComponent,
+    SimpleSearchComponent,
   ],
   imports: [
     BrowserModule,

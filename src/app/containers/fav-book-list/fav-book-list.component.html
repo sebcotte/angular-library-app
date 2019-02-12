@@ -6,10 +6,9 @@
     </div>
   </div>
 
-  <div class="row card-group">
+  <div class="row card-group justify-content-md-center">
     <div class="col-md-4 mb-3"
-         *ngFor="let favBook of favBooks"
-    >
+         *ngFor="let favBook of favBooks">
       <app-book-card
         [book]="favBook.bookInfo"
         [isFav]="true"
