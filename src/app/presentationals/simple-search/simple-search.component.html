@@ -1,3 +1,12 @@
-<p>
-  simple-search works!
-</p>
+<form novalidate [formGroup]="searchForm">
+  <div class="input-group">
+    <input class="form-control"
+      placeholder="Search for any image"
+      formControlName="bookTitle">
+    <div class="input-group-append">
+      <button class="btn btn-secondary d-inline-flex align-content-center" (click)="search(searchForm.value)">
+        <i class="material-icons mr-1">search</i>
+      </button>
+    </div>
+  </div>
+</form>
