@@ -1,22 +1,23 @@
 <div class="card text-center">
   <img class="card-img-top" src={{book.imgPreview}} alt="">
   <div class="card-img-overlay">
-    <button *ngIf="!isFav" class="btn btn-light d-inline-flex align-content-center float-right" (click)="toggleFav(book)">
+    <button *ngIf="!isFav" class="btn btn-light d-inline-flex align-content-center float-right ml-2" (click)="toggleFav(book)">
       <i class="material-icons mr-1">add</i>Collect
     </button>
-    <button *ngIf="isFav" class="btn btn-danger d-inline-flex align-content-center float-right" (click)="toggleFav(book)">
+    <button *ngIf="isFav" class="btn btn-danger d-inline-flex align-content-center float-right ml-2" (click)="toggleFav(book)">
       <i class="material-icons mr-1">delete</i>Remove
     </button>
-    <button class="btn d-inline-flex align-content-center float-right" style="color: red;  ">
-      <i class="material-icons mr-1">favorite</i>
+    <button *ngIf="book.likes > 0" class="btn btn-light d-inline-flex align-content-center float-right" style="color: red;" (click)="toggleLike(book)">
+      <i class="material-icons mr-1">favorite</i>{{book.likes}}
     </button>
-    <button class="btn d-inline-flex align-content-center float-right" style="color: red;  ">
-      <i class="material-icons mr-1">favorite_border</i>
+    <button *ngIf="!book.likes" class="btn btn-light d-inline-flex align-content-center float-right" style="color: red;" (click)="toggleLike(book)">
+      <i class="material-icons mr-1">favorite_border</i>{{book.likes}}
     </button>
   </div>
   <div class="card-body" (click)="showBookDetails(book)">
     <h4 class="card-title">{{ book.title }}</h4>
     <h5 class="card-subtitle mb-2 text-muted">{{ book.author }}</h5>
+
   </div>
   <div class="card-footer bg-transparent">
     <span *ngFor="let tag of book.tags" class="badge badge-secondary mr-1">{{ tag }}</span>

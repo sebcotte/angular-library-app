@@ -10,14 +10,14 @@
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" routerLink="/books">Home</a>
       </li>
-      <li *ngIf="this.authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']">
+      <li *ngIf="this.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" routerLink="/favBooks">My favorites</a>
       </li>
     </ul>
-    <button (click)="this.authService.logInWithGoogle()" *ngIf="!this.authService.isLoggedIn()" class="btn btn-success my-2 my-sm-0 d-inline-flex align-content-center">
+    <button (click)="this.login()" *ngIf="!this.isLoggedIn()" class="btn btn-success my-2 my-sm-0 d-inline-flex align-content-center">
         <i class="material-icons mr-1">account_circle</i>Log in
     </button>
-    <button (click)="this.authService.logOut()" *ngIf="this.authService.isLoggedIn()" class="btn btn-danger my-2 my-sm-0 d-inline-flex align-content-center">
+    <button (click)="this.logout()" *ngIf="this.isLoggedIn()" class="btn btn-danger my-2 my-sm-0 d-inline-flex align-content-center">
         <i class="material-icons mr-1">account_circle</i>Log out
     </button>
   </div>

@@ -50,6 +50,14 @@ export class BookListComponent implements OnInit {
     this.favBookService.addBookToFav(event);
   }
 
+  onToggleLike(event: Book) {
+    this.booksService.addLike(event);
+  }
+
+  onAddBook(book: Book) {
+    this.booksService.addBook(book);
+  }
+
   private setFilters() {
     this.config$.subscribe(
       (config: BookListConfig) => {

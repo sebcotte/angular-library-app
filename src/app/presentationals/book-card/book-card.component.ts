@@ -13,6 +13,7 @@ export class BookCardComponent {
 
   @Output() showDetails = new EventEmitter<Book>();
   @Output() toggleFavorite = new EventEmitter<Book>();
+  @Output() toggleLikeEvent = new EventEmitter<Book>();
 
   showBookDetails(event: Book) {
     if (event) {
@@ -22,6 +23,10 @@ export class BookCardComponent {
 
   toggleFav(event: Book) {
     this.toggleFavorite.emit(event);
+  }
+
+  toggleLike(event: Book) {
+    this.toggleLikeEvent.emit(event);
   }
 
 }

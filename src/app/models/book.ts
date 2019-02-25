@@ -4,4 +4,5 @@ export interface Book {
   author: string;
   tags: string[];
   imgPreview: string;
+  likes: number;
 }
