@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row mt-3">
+  <div class="row mt-4 mb-4">
     <div class="col-md-auto">
       <h2>Favorite Books</h2>
       <p> {{favBooks?.length}} books found</p>
@@ -7,7 +7,7 @@
   </div>
 
   <div class="row card-group justify-content-md-center">
-    <div class="col-md-4 mb-3"
+    <div class="col-md-4 mb-4"
          *ngFor="let favBook of favBooks">
       <app-book-card
         [book]="favBook.bookInfo"
