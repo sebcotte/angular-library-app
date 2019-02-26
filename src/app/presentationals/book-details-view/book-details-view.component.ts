@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Book } from 'src/app/models/book';
+import { ActivatedRoute } from '@angular/router';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-book-details-view',
@@ -8,9 +11,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class BookDetailsViewComponent implements OnInit {
 
-  constructor() { }
+  book: Book;
+  id: string;
+
+  constructor(private route: ActivatedRoute, private bookService: BookService) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
 }
