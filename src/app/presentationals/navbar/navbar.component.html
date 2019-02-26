@@ -13,6 +13,9 @@
       <li *ngIf="this.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" routerLink="/favBooks">My favorites</a>
       </li>
+      <li *ngIf="this.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" routerLink="/addPhoto">Add Photo</a>
+        </li>
     </ul>
     <button (click)="this.login()" *ngIf="!this.isLoggedIn()" class="btn btn-success my-2 my-sm-0 d-inline-flex align-content-center">
         <i class="material-icons mr-1">account_circle</i>Log in

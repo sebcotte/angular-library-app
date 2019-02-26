@@ -23,6 +23,7 @@ import { AlertService } from './services/alert.service';
 import { SearchService } from './services/search.service';
 import { SearchComponent } from './presentationals/search/search.component';
 import { SimpleSearchComponent } from './presentationals/simple-search/simple-search.component';
+import { UploadPhotoComponent } from './containers/upload-photo/upload-photo.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SimpleSearchComponent } from './presentationals/simple-search/simple-se
     AlertComponent,
     SearchComponent,
     SimpleSearchComponent,
+    UploadPhotoComponent,
   ],
   imports: [
     BrowserModule,

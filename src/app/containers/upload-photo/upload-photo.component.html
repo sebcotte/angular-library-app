@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row mt-3 justify-content-md-center">
+    <div class="col-md-auto mb-3">
+      <h2>About your photo</h2>
+    </div>
+    <div class="col-md-12">
+      <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <form [formGroup]="photoForm">
+            <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+              </div>
+              <input class="form-control"
+                placeholder="Title of your photo"
+                formControlName="photoTitle">
+            </div>
+            <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Tags</span>
+              </div>
+              <input class="form-control"
+                placeholder="Tags of your photo"
+                formControlName="tags">
+            </div>
+            <div class="form-group mb-4">
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+            <button type="submit" class="btn btn-success float-right">Upload</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

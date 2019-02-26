@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { BookListComponent } from './containers/book-list/book-list.component';
 import { BookDetailsComponent } from './containers/book-details/book-details.component';
 import { FavBookListComponent } from './containers/fav-book-list/fav-book-list.component';
+import { UploadPhotoComponent } from './containers/upload-photo/upload-photo.component';
 
 const routes: Routes = [
   {path: 'books', component: BookListComponent},
   {path: 'books/:id', component: BookDetailsComponent},
   {path: 'favBooks', component: FavBookListComponent},
+  {path: 'addPhoto', component: UploadPhotoComponent},
   {path: '', redirectTo: '/books', pathMatch: 'full'},
   {path: '**', redirectTo: '/books', pathMatch: 'full'}
 ];
