@@ -7,7 +7,7 @@ import { FavBookService } from 'src/app/services/fav-book.service';
 import { SearchService } from 'src/app/services/search.service';
 import { BookListConfig } from 'src/app/models/book-list-config';
 import { Subject, Subscription } from 'rxjs';
-import { BookListFilters } from 'src/app/models/book-list-filters';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-book-list',
@@ -24,7 +24,8 @@ export class BookListComponent implements OnInit {
   constructor(private favBookService: FavBookService,
               private booksService: BookService,
               private router: Router,
-              private searchService: SearchService) { }
+              private searchService: SearchService,
+              private userService: UserService) { }
 
   ngOnInit() {
     this.setFilters();
@@ -51,7 +52,7 @@ export class BookListComponent implements OnInit {
   }
 
   onToggleLike(event: Book) {
-    this.booksService.addLike(event);
+    this.userService.likePhoto(event);
   }
 
   onAddBook(book: Book) {

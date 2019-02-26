@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { AlertService } from './alert.service';
+import { AllUsersService } from './all-users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class AuthService {
   user: Observable<firebase.User>;
   private userDetails: firebase.User = null;
 
-  constructor(private firebaseAuth: AngularFireAuth, private alertService: AlertService , private router: Router) {
+  constructor(private firebaseAuth: AngularFireAuth, private alertService: AlertService ,
+              private router: Router, private allUsersService: AllUsersService) {
     this.user = firebaseAuth.authState;
     this.user.subscribe(
       (user) => {
@@ -25,7 +27,12 @@ export class AuthService {
     return this.firebaseAuth.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
     ).then(
-      (success) => this.alertService.success('You are now authenticated!')
+      (userCredentials: firebase.auth.UserCredential) => {
+        this.updateUserData(userCredentials.user);
+
+        this.allUsersService.addUser(this.getCurrentUserId());
+        this.alertService.success('You are now authenticated!');
+      }
     );
   }
 
@@ -45,4 +52,9 @@ export class AuthService {
     }
     );
   }
+
+  private updateUserData(user) {
+    this.userDetails = user;
+  }
+
 }

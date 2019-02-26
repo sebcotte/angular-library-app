@@ -5,6 +5,7 @@ import { AngularFirestoreCollection, AngularFirestore } from 'angularfire2/fires
 
 import { Book } from '../models/book';
 import { AlertService } from './alert.service';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,6 @@ export class BookService {
       .pipe(catchError((error: any) => Observable.throw(error.json())));
   }
 
-  /* TODO: Ameliorer l'impl !!*/
   getBookById(id: string) {
     return this.getBooks().pipe(
       map((books: Book[]) => books.find(book => book.id === id))
@@ -33,7 +33,7 @@ export class BookService {
   }
 
   addLike(book: Book) {
-    this.booksCollection.doc(book.id).update({likes: book.likes++}).then(
+    this.booksCollection.doc<Book>(book.id).update({likes: book.likes++}).then(
       () => {
         this.alertService.success('Book liked !');
       }
