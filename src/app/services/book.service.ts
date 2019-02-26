@@ -18,6 +18,13 @@ export class BookService {
   constructor(private firestore: AngularFirestore, private alertService: AlertService) {
     this.booksCollection = this.firestore.collection<Book>('books');
     this.setBooks();
+
+    /*this.books.forEach(
+      (book: Book) => {
+        this.booksCollection.add(book);
+      }
+    );*/
+
   }
 
   getBooks(): Observable<Book[]> {
